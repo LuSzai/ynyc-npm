@@ -1,0 +1,23 @@
+{
+  "name": "ynyc-npm",
+  "version": "1.0.1",
+  "description": "npm manager",
+  "main": "index.js",
+  "scripts": {
+  },
+  "bin": {
+    "npm-mgr": "./index.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.0.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^10.1.6",
+    "child_process": "^1.0.2"
+  }
+}
