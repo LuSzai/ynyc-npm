@@ -131,7 +131,7 @@ function useEnv() {
       });
     })
     .catch((e) => {
-      console.log(e);
+      // console.log(e);
     });
 }
 
@@ -156,7 +156,7 @@ function deleteEnv() {
       console.log("删除成功！".green);
     })
     .catch((e) => {
-      console.log(e);
+      // console.log(e);
     });
 }
 
@@ -193,6 +193,6 @@ function addEnv() {
       console.log("环境添加成功！".green);
     })
     .catch((e) => {
-      console.log(e);
+      // console.log(e);
     });
 }
