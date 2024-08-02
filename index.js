@@ -7,6 +7,17 @@ import * as process from "process";
 import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 
+if (!Array.prototype.findLastIndex) {
+  Array.prototype.findLastIndex = function(callback, thisArg) {
+    for (let i = this.length - 1; i >= 0; i--) {
+      if (callback.call(thisArg, this[i], i, this)) {
+        return i;
+      }
+    }
+    return -1;
+  };
+}
+
 // 获取命令行参数
 const args = process.argv.slice(2);
 
@@ -119,7 +130,9 @@ function useEnv() {
         console.log(String(r).red);
       });
     })
-    .catch(() => {});
+    .catch((e) => {
+      console.log(e);
+    });
 }
 
 /**
@@ -142,7 +155,9 @@ function deleteEnv() {
       saveEnvJson(delAfterEnv);
       console.log("删除成功！".green);
     })
-    .catch(() => {});
+    .catch((e) => {
+      console.log(e);
+    });
 }
 
 /**
@@ -177,5 +192,7 @@ function addEnv() {
       fs.writeFileSync(envFilePath, JSON.stringify(env));
       console.log("环境添加成功！".green);
     })
-    .catch(() => {});
+    .catch((e) => {
+      console.log(e);
+    });
 }
