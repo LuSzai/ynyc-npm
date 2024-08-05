@@ -7,6 +7,7 @@ import * as process from "process";
 import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 
+// inquirer 使用 findLastIndex，兼容低版本node环境不支持
 if (!Array.prototype.findLastIndex) {
   Array.prototype.findLastIndex = function(callback, thisArg) {
     for (let i = this.length - 1; i >= 0; i--) {
